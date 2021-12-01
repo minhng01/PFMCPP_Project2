@@ -16,12 +16,12 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of the 6 major primitive types available in C++  here:
  
- 
- 
- 
- 
- 
- 
+ int
+ float
+ double
+ char
+ bool
+ void
  
  
  
@@ -60,9 +60,27 @@ void variableDeclarations()
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
     
+    int chapter = 2;
+    int age = 20;
+    int level = 3;
 
+    float result = 9.5f;
+    float ratio = 0.4f;
+    float randomNum = 490.23f;  
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    double homeTemperature = 70.5;
+    double startNum = 10.0555;
+    double endRange = 1000.33333;
+
+    char firstChar = 'a';
+    char lastChar = 'z';
+    char myChar = 'm';
+
+    bool checked = false;
+    bool sorted = false;
+    bool repeated = true;
+
+    ignoreUnused(number, chapter, age, level, result, ratio, randomNum, homeTemperature, startNum, endRange, firstChar, lastChar, myChar, checked, sorted, repeated); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -79,42 +97,90 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
+bool checkInRange(int myNum = 5, int start = 0, int end = 10)
+{
+    ignoreUnused(myNum, start, end);
+    return {};
+}
 
 /*
  2)
  */
+int rollDice(int numOfDice = 3, int numOfPlayer = 2, bool repeated = false)
+{
+    ignoreUnused(numOfDice, numOfPlayer, repeated);
+    return {};
+}
 
 /*
  3)
  */
+double calculateRatio(double dividend, double divisor)
+{
+    ignoreUnused(dividend, divisor);
+    return {};
+}
 
 /*
  4)
  */
+void turnOff(int computerId = 0)
+{
+    ignoreUnused(computerId);
+}
 
 /*
  5)
  */
+float sumOfScore(float player1, float player2)
+{
+    ignoreUnused(player1, player2);
+    return {};
+}
 
 /*
  6)
  */
+char convertNumToChar(int number = 0, bool inRange = true)
+{
+    ignoreUnused(number, inRange);
+    return {};
+}
 
 /*
  7)
  */
+void cookDinner(int ingredientId = 0, int temperature = 400, char temperatureUnit = 'f', float duration = 3.5f, char durationUnit = 'h')
+{
+    ignoreUnused(ingredientId, temperature, temperatureUnit, duration, durationUnit);
+}
 
 /*
  8)
  */
+int getTotalRegistration(int courseId = 0, int numOfStudent = 90, int numOfSession = 2)
+{
+    ignoreUnused(courseId, numOfStudent, numOfSession);
+    return {};
+}
 
 /*
  9)
  */
+char getLetter(int studentId = 0, int charPosition = 0)
+{
+    ignoreUnused(studentId, charPosition);
+    return {};
+}
 
 /*
  10)
  */
+bool checkOverSpeedLimit(float carSpeed, float maxSpeed)
+{
+    ignoreUnused(carSpeed, maxSpeed);
+    return {};
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -136,27 +202,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto numberChecked = checkInRange(25, 1, 20);
     //2)
-    
+    auto resultDiceNumber = rollDice(1, 1, false);
     //3)
-    
+    auto ratio = calculateRatio(9, 100);
     //4)
-    
+    turnOff(10);
     //5)
-    
+    auto finalScore = sumOfScore(30.5f, 99.2f);
     //6)
-    
+    auto resultChar = convertNumToChar(4, true);
     //7)
-    
+    cookDinner(2, 375, 'f', 2.5f, 'h');
     //8)
-    
+    auto numOfRegistration = getTotalRegistration(23, 40, 3);
     //9)
-    
+    auto studentChar = getLetter(4, 0);
     //10)
+    auto limitChecked = checkOverSpeedLimit(30.0f, 25.0f);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, numberChecked, resultDiceNumber, ratio, finalScore, resultChar, numOfRegistration, studentChar, limitChecked);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
